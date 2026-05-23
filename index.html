@@ -1,12 +1,24 @@
-<!DOCTYPE html><html lang="hu">
+<!DOCTYPE html>
+<html lang="hu">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berei László Klíma</title>  <style>
+
+  <title>Berei László Klíma</title>
+
+  <meta name="description"
+    content="Klímatelepítés, javítás és tisztítás gyors kiszállással Magyarország egész területén.">
+
+  <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -18,7 +30,7 @@
 
     .hero {
       background: linear-gradient(135deg, #07111f, #0b2c52, #1292d3);
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
 
@@ -31,7 +43,7 @@
     .hero p {
       font-size: 22px;
       color: #d7e9ff;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .btn {
@@ -44,14 +56,16 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
+      transition: 0.3s;
     }
 
     .btn:hover {
       background: white;
+      transform: translateY(-2px);
     }
 
     .section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
     }
@@ -72,8 +86,14 @@
       background: #0f1f35;
       border: 1px solid #17304f;
       border-radius: 20px;
-      padding: 30px;
+      padding: 35px 30px;
       text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00c8ff;
     }
 
     .card h3 {
@@ -89,13 +109,38 @@
       background: #09182a;
       border-radius: 25px;
       padding: 40px;
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    .info h2 {
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: 0.3s;
+      border: 2px solid #17304f;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      border-color: #00c8ff;
     }
 
     .contact {
       text-align: center;
       background: linear-gradient(135deg, #08121f, #0b2c52);
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
 
     .phone {
@@ -103,6 +148,96 @@
       font-weight: 900;
       color: #00c8ff;
       margin: 25px 0;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 50px auto 0;
+      background: #0f1f35;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid #17304f;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      border: none;
+      background: #09182a;
+      color: white;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: #00c8ff;
+      color: #07111f;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: white;
+    }
+
+    .messenger-box {
+      margin-top: 35px;
+    }
+
+    .messenger-btn {
+      display: inline-block;
+      background: #0084ff;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .messenger-btn:hover {
+      background: #339cff;
+    }
+
+    .floating-messenger {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 65px;
+      height: 65px;
+      background: #0084ff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 32px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+      transition: 0.3s;
+    }
+
+    .floating-messenger:hover {
+      transform: scale(1.1);
     }
 
     footer {
@@ -113,6 +248,7 @@
     }
 
     @media(max-width:768px) {
+
       .hero h1 {
         font-size: 42px;
       }
@@ -124,82 +260,187 @@
       .phone {
         font-size: 32px;
       }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .form-container {
+        padding: 25px;
+      }
+
+      .gallery img {
+        height: 220px;
+      }
     }
-  </style></head>
-<body>  <section class="hero">
-    <h1>BEREI LÁSZLÓ</h1><p>
-  Klímatelepítés • Javítás • Tisztítás
-</p>
+  </style>
+</head>
 
-<a class="btn" href="tel:+36300806000">
-  📞 Hívás most
-</a>
+<body>
 
-<a class="btn" href="mailto:klima.berei@gmail.com">
-  📩 Ajánlatkérés
-</a>
+  <section class="hero">
 
-  </section>  <section class="section">
-    <h2 class="section-title">Szolgáltatások</h2><div class="cards">
+    <h1>BEREI LÁSZLÓ</h1>
 
-  <div class="card">
-    <div class="emoji">❄️</div>
-    <h3>Klímatelepítés</h3>
     <p>
-      Modern split és inverteres klímák szakszerű telepítése.
+      Klímatelepítés • Javítás • Tisztítás
     </p>
-  </div>
 
-  <div class="card">
-    <div class="emoji">🧼</div>
-    <h3>Tisztítás</h3>
+    <a class="btn" href="tel:+36300806000">
+      📞 Hívás most
+    </a>
+
+    <a class="btn" href="#kapcsolat">
+      📩 Ajánlatkérés
+    </a>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">Szolgáltatások</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">❄️</div>
+        <h3>Klímatelepítés</h3>
+        <p>
+          Modern split és inverteres klímák szakszerű telepítése.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🧼</div>
+        <h3>Tisztítás</h3>
+        <p>
+          Klímatisztítás és fertőtlenítés a tiszta levegőért.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🛠️</div>
+        <h3>Javítás</h3>
+        <p>
+          Gyors hibafeltárás és precíz javítás.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h2>Miért válassz engem?</h2>
+
+      <p>
+        ✔️ Precíz munkavégzés<br>
+        ✔️ Gyors kiszállás<br>
+        ✔️ Megbízható szolgáltatás<br>
+        ✔️ Országos elérhetőség<br>
+        ✔️ Komfort minden évszakban
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">Korábbi munkák (feltöltés alatt)</h2>
+
+    <div class="gallery">
+
+      <img src=""
+        alt="Klímatelepítés">
+
+      <img src="https://images.unsplash.com/photo-1581092921461-eab10380c7d7?q=80&w=1200&auto=format&fit=crop"
+        alt="Klíma szerelés">
+
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop"
+        alt="Klímatisztítás">
+
+    </div>
+
+  </section>
+
+  <section class="contact" id="kapcsolat">
+
+    <h2 class="section-title">Kapcsolat</h2>
+
     <p>
-      Klímatisztítás és fertőtlenítés a tiszta levegőért.
+      Magyarország területén, vagy ahol szükség van rám 😉
     </p>
-  </div>
 
-  <div class="card">
-    <div class="emoji">🛠️</div>
-    <h3>Javítás</h3>
+    <div class="phone">
+      0630 080 6000
+    </div>
+
     <p>
-      Gyors hibafeltárás és precíz javítás.
+      📩 klima.berei@gmail.com
     </p>
-  </div>
 
-</div>
+    <br>
 
-<div class="info">
-  <h2 style="margin-bottom:20px;">Miért válassz engem?</h2>
+    <a class="btn" href="tel:+36300806000">
+      Hívj most!
+    </a>
 
-  <p>
-    ✔️ Precíz munkavégzés<br>
-    ✔️ Gyors kiszállás<br>
-    ✔️ Megbízható szolgáltatás<br>
-    ✔️ Országos elérhetőség<br>
-    ✔️ Komfort minden évszakban
-  </p>
-</div>
+    <div class="form-container">
 
-  </section>  <section class="contact">
-    <h2 class="section-title">Kapcsolat</h2><p>
-  Magyarország területén, vagy ahol szükség van rám 😉
-</p>
+      <h3 style="margin-bottom:25px; font-size:32px;">
+        Küldj üzenetet
+      </h3>
 
-<div class="phone">
-  0630 080 6000
-</div>
+      <form class="contact-form" action="https://formsubmit.co/klima.berei@gmail.com" method="POST">
 
-<p>
-  📩 klima.berei@gmail.com
-</p>
+        <input type="hidden" name="_captcha" value="false">
 
-<br>
+        <input type="text" name="name" placeholder="Név" required>
 
-<a class="btn" href="tel:+36300806000">
-  Hívj most!
-</a>
+        <input type="tel" name="phone" placeholder="Telefonszám" required>
 
-  </section>  <footer>
-    © 2025 Berei László Klíma — Tisztán, precízen dolgozok.
-  </footer></body>
+        <input type="email" name="email" placeholder="Email cím" required>
+
+        <select name="service">
+          <option>Klímatelepítés</option>
+          <option>Klímatisztítás</option>
+          <option>Javítás</option>
+          <option>Ajánlatkérés</option>
+        </select>
+
+        <textarea name="message" placeholder="Írd le röviden mire lenne szükséged..."
+          required></textarea>
+
+        <button type="submit">
+          Üzenet küldése
+        </button>
+
+      </form>
+
+      <div class="messenger-box">
+
+        <p style="margin-bottom:20px;">
+          Vagy írj Messengeren:
+        </p>
+
+        <a class="messenger-btn" href="https://m.me/laszlo.berei.5" target="_blank">
+          💬 Messenger üzenet
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Berei László Klíma — Tisztán, precízen dolgozok.
+  </footer>
+
+  <a class="floating-messenger" href="https://m.me/laszlo.berei.5" target="_blank">
+    💬
+  </a>
+
+</body>
+
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+</head>
+<body>
+
+<h1>Admin belépés</h1>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Jelszó">
+
+<button onclick="login()">
+  Belépés
+</button>
+
+<input type="file" id="fileInput">
+
+<button onclick="uploadImage()">
+  Kép feltöltése
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>
